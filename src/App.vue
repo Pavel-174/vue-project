@@ -4,7 +4,7 @@
     <div> Дизлайки: <strong> {{ dislikes }} </strong> </div>
     <div>
         <button v-on:click="addLike">Like</button>
-        <button v-on:click="addDislike">Dislike</button>
+        <button @:click="addDislike">Dislike</button>
     </div>
 </template>
 
