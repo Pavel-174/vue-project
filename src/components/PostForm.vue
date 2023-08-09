@@ -23,12 +23,7 @@
 </template>
 
 <script>
-import Button from '@/components/UI/Button.vue'
-
 export default {
-    components: {
-        Button
-    },
     data() {
         return {
             post: {
