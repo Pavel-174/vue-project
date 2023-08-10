@@ -67,6 +67,6 @@ export default {
     padding: 20px;
 }
 .button__post{
-    margin: 20px 0gi;
+    margin: 20px 0;
 }
 </style>
