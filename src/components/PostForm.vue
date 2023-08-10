@@ -1,24 +1,22 @@
 <template>
     <form @submit.prevent>
         <h4>Создание поста</h4>
-        <input 
+        <MyInput 
             v-model="post.title"
-            class="input" 
             type="text" 
             placeholder="Название поста"
-        >
-        <input 
+        />
+        <MyInput 
             v-model="post.body"
-            class="input" 
             type="text" 
             placeholder="Описание поста"
-        >
-        <Button
+        />
+        <MyButton
             class="button button__form" 
             @click="createPost"
         >
         Создать пост
-        </Button>
+        </MyButton>
     </form>
 </template>
 
@@ -53,13 +51,6 @@ export default {
 form {
     display: flex;
     flex-direction: column;
-}
-
-.input {
-    border: 3px solid teal;
-    width: 100%;
-    padding: 10px 15px;
-    margin-top: 15px;
 }
 
 .button__form {

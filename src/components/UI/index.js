@@ -1,5 +1,7 @@
-import Button from '@/components/UI/Button.vue'
+import MyButton from '@/components/UI/MyButton.vue'
+import MyInput from '@/components/UI/MyInput.vue'
 
 export default [
-    Button
+    MyButton, 
+    MyInput,
 ]
