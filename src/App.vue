@@ -3,6 +3,12 @@
         <h1>Страница с постами</h1>
         <MyButton
             class="button__post"
+            @click="fetchPosts"
+        >
+            Получить посты
+        </MyButton>
+        <MyButton
+            class="button__post"
             @click="openPopup"
         >
             Создать пост
@@ -24,6 +30,7 @@ import PostForm from '@/components/PostForm'
 import PostList from '@/components/PostList'
 import MyPopup from './components/UI/MyPopup.vue';
 import MyButton from './components/UI/MyButton.vue';
+import axios from 'axios';
 
 export default {
     components: {
@@ -33,11 +40,7 @@ export default {
 },
     data () {
         return {
-            posts: [
-                { id: 1, title: "JavaScript", body: "JavaScript универсальный язык програмирования" },
-                { id: 2, title: "JavaScript 1", body: "JavaScript универсальный язык програмирования 1" },
-                { id: 3, title: "JavaScript 2", body: "JavaScript универсальный язык програмирования 2" },
-            ],
+            posts: [],
             popupOpened: false
         }
     },
@@ -51,7 +54,17 @@ export default {
         },
         openPopup() {
             this.popupOpened = true;
-        }
+        },
+
+        async fetchPosts() {
+            try {
+                const response = await axios.get('https://jsonplaceholder.typicode.com/posts?_limit=10');
+                this.posts = response.data;
+                console.log(response)
+            } catch (event) {
+                alert("Ошибка!")
+            }
+        },
     },
 }
 </script>
