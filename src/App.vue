@@ -15,7 +15,9 @@
         <PostList 
           :posts="posts"
           @remove="removePost"
+          v-if="!isPostLoading"
         />
+        <div v-else="isPostLoading">Идет загрузка...</div>
     </div>
 </template>
 
@@ -35,7 +37,8 @@ export default {
     data () {
         return {
             posts: [],
-            popupOpened: false
+            popupOpened: false,
+            isPostLoading: false,
         }
     },
     methods: {
@@ -52,10 +55,15 @@ export default {
 
         async fetchPosts() {
             try {
-                const response = await axios.get('https://jsonplaceholder.typicode.com/posts?_limit=10');
-                this.posts = response.data;
+                this.isPostLoading = true;
+                setTimeout(async () => {
+                    const response = await axios.get('https://jsonplaceholder.typicode.com/posts?_limit=10');
+                    this.posts = response.data;
+                    this.isPostLoading = false;
+                }, 1000);
             } catch (event) {
                 alert("Ошибка!")
+            } finally {
             }
         },
     },
