@@ -3,12 +3,6 @@
         <h1>Страница с постами</h1>
         <MyButton
             class="button__post"
-            @click="fetchPosts"
-        >
-            Получить посты
-        </MyButton>
-        <MyButton
-            class="button__post"
             @click="openPopup"
         >
             Создать пост
@@ -60,12 +54,14 @@ export default {
             try {
                 const response = await axios.get('https://jsonplaceholder.typicode.com/posts?_limit=10');
                 this.posts = response.data;
-                console.log(response)
             } catch (event) {
                 alert("Ошибка!")
             }
         },
     },
+    mounted() {
+        this.fetchPosts();
+    }
 }
 </script>
 
