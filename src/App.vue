@@ -9,8 +9,8 @@
             Создать пост
             </MyButton>
             <MySelect 
-              v-model="selectedSort"
-              :option="sortOptions"
+              v-model="selectedSort" 
+              :options="sortOptions"
             >
             </MySelect>
         </div>
