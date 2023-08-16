@@ -16,7 +16,7 @@
         </div>
         <MyPopup v-model:show="popupOpened">
             <PostForm
-                @create="createPost"
+              @create="createPost"
             />
         </MyPopup>
         <PostList 

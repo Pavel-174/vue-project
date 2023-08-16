@@ -6,9 +6,9 @@
         </div>
         <div class="post__buttons">
             <MyButton
-                @click="$emit('remove', post)"
+              @click="$emit('remove', post)"
             >
-                Удалить
+            Удалить
             </MyButton>
         </div>
     </div>

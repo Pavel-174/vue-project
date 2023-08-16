@@ -9,10 +9,10 @@
         />
     </div>
     <h3 
-        class="posts__header"
-        v-else="posts.length === 0"
+      class="posts__header"
+      v-else="posts.length === 0"
     >
-        Список постов пуст
+    Список постов пуст
     </h3>
 </template>
 

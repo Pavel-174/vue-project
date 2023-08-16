@@ -1,12 +1,12 @@
 <template>
     <div 
-        class="popup" 
-        v-if="show" 
-        @click="closePopup"
+      class="popup" 
+      v-if="show" 
+      @click="closePopup"
     >
         <div 
-            @click.stop 
-            class="popup__content"
+          @click.stop 
+          class="popup__content"
         >
             <slot></slot>
         </div>
